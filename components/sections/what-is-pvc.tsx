@@ -248,7 +248,7 @@ export default function WhatIsPVC() {
           ].map((b) => (
             <div key={b.l} className="bg-neutral-50 border border-neutral-100 rounded-xl p-3 hover:border-teal-200 transition-colors">
               <div className="font-mono text-sm font-semibold text-teal-600">{b.v}</div>
-              <div className="font-display text-sm text-neutral-700 mt-0.5 leading-none">{b.l}</div>
+              <div className="text-xs text-neutral-500 mt-0.5 leading-none" style={{fontFamily:"'DM Sans',system-ui,sans-serif"}}>{b.l}</div>
             </div>
           ))}
         </motion.div>
