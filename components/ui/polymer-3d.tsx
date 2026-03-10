@@ -63,7 +63,7 @@ function Bond({
 function PVCMolecule() {
   const groupRef = useRef<THREE.Group>(null);
 
-  useFrame((_, delta) => {
+  useFrame((_state: unknown, delta: number) => {
     if (groupRef.current) {
       groupRef.current.rotation.y += delta * 0.4;
       groupRef.current.rotation.x = Math.sin(Date.now() * 0.0004) * 0.12;
