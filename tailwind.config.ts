@@ -10,8 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        // Bebas Neue — bold condensed display (closest free match to Danson Bold)
+        display: ["'Bebas Neue'", "Impact", "sans-serif"],
+        // DM Sans — clean body
+        sans: ["'DM Sans'", "system-ui", "sans-serif"],
+        // Instrument Serif — elegant italic accents
         serif: ["'Instrument Serif'", "Georgia", "serif"],
-        sans: ["'Instrument Sans'", "system-ui", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },
       colors: {
