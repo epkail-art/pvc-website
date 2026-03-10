@@ -109,47 +109,6 @@ export default function Polymerization() {
     <section ref={sectionRef} id="polymerization" className="py-32 bg-neutral-50">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/*
-          ── Hero image ──────────────────────────────────────
-          Place your own image at: public/pvc.jpeg
-          This slot is reserved for it.
-        */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-14 w-full h-[340px] rounded-2xl overflow-hidden relative bg-neutral-100 border border-neutral-200"
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/pvc.jpeg"
-            alt="PVC — polyvinyl chloride"
-            className="w-full h-full object-cover object-center"
-            onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-              // If image not found yet, show a clean placeholder
-              const t = e.currentTarget as HTMLImageElement;
-              t.style.display = "none";
-              const parent = t.parentElement;
-              if (parent && !parent.querySelector(".img-placeholder")) {
-                const ph = document.createElement("div");
-                ph.className = "img-placeholder w-full h-full flex flex-col items-center justify-center gap-3";
-                ph.innerHTML = `
-                  <div style="font-family:monospace;font-size:0.7rem;color:#9ca3af;letter-spacing:0.15em;text-transform:uppercase">
-                    Add your image to
-                  </div>
-                  <div style="font-family:monospace;font-size:1rem;color:#0d9488;font-weight:600">
-                    public/pvc.jpeg
-                  </div>
-                  <div style="font-family:monospace;font-size:0.65rem;color:#d1d5db">
-                    Recommended: 1600 × 700px · .jpeg or .jpg
-                  </div>`;
-                parent.appendChild(ph);
-              }
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-50/60 to-transparent pointer-events-none" />
-        </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }} className="mb-14">
           <p className="text-xs font-semibold tracking-[0.18em] uppercase text-teal-600 flex items-center gap-2 mb-4">

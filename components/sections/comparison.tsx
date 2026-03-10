@@ -73,20 +73,20 @@ export default function Comparison() {
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-neutral-100 bg-neutral-50">
-              <th className="text-left px-5 py-3.5 font-semibold text-neutral-600 text-xs uppercase tracking-wider w-1/4">Property</th>
-              <th className="text-center px-4 py-3.5 font-semibold text-teal-600 text-xs uppercase tracking-wider w-1/6 bg-teal-50/50">
+              <th className="text-left px-5 py-3.5 font-display text-base text-neutral-600 tracking-wider w-1/4">Property</th>
+              <th className="text-center px-4 py-3.5 font-display text-lg text-teal-600 tracking-wider w-1/6 bg-teal-50/50">
                 <div>PVC</div>
                 <div className="font-mono font-normal text-[0.62rem] text-teal-400 mt-0.5">–[CH₂CHCl]ₙ–</div>
               </th>
-              <th className="text-center px-4 py-3.5 font-semibold text-neutral-500 text-xs uppercase tracking-wider w-1/6">
+              <th className="text-center px-4 py-3.5 font-display text-lg text-neutral-500 tracking-wider w-1/6">
                 <div>PE</div>
                 <div className="font-mono font-normal text-[0.62rem] text-neutral-300 mt-0.5">–[CH₂CH₂]ₙ–</div>
               </th>
-              <th className="text-center px-4 py-3.5 font-semibold text-neutral-500 text-xs uppercase tracking-wider w-1/6">
+              <th className="text-center px-4 py-3.5 font-display text-lg text-neutral-500 tracking-wider w-1/6">
                 <div>PP</div>
                 <div className="font-mono font-normal text-[0.62rem] text-neutral-300 mt-0.5">–[CH₂CHCH₃]ₙ–</div>
               </th>
-              <th className="text-left px-4 py-3.5 font-normal text-neutral-400 text-[0.68rem] hidden md:table-cell">Note</th>
+              <th className="text-left px-4 py-3.5 font-serif italic text-sm text-neutral-400 hidden md:table-cell">Note</th>
             </tr>
           </thead>
           <tbody>
@@ -99,7 +99,7 @@ export default function Comparison() {
                 viewport={{ once: true }}
                 className="border-b border-neutral-50 hover:bg-neutral-50/70 transition-colors"
               >
-                <td className="px-5 py-3 font-medium text-neutral-700">{row.property}</td>
+                <td className="px-5 py-3 font-serif text-base text-neutral-800">{row.property}</td>
                 <td className="px-4 py-3 text-center bg-teal-50/30">
                   <RatingDots val={row.pvc} />
                 </td>
@@ -109,7 +109,7 @@ export default function Comparison() {
                 <td className="px-4 py-3 text-center">
                   <RatingDots val={row.pp} />
                 </td>
-                <td className="px-4 py-3 text-[0.72rem] text-neutral-400 hidden md:table-cell leading-snug">{row.note}</td>
+                <td className="px-4 py-3 font-sans text-[0.72rem] text-neutral-400 hidden md:table-cell leading-snug">{row.note}</td>
               </motion.tr>
             ))}
           </tbody>
