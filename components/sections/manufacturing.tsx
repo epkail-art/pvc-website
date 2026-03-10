@@ -63,7 +63,7 @@ export default function Manufacturing() {
             <span className="w-5 h-px bg-teal-500" />
             Industrial Processing
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900 mb-4">
+          <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900 mb-4">
             Manufacturing Processes
           </h2>
           <p className="text-neutral-400 max-w-lg text-sm leading-relaxed">
@@ -86,7 +86,7 @@ export default function Manufacturing() {
                 {p.label}
               </div>
               <div className="flex items-end justify-between mb-3">
-                <div className="font-serif text-xl text-neutral-900">{p.name}</div>
+                <div className="font-display text-2xl text-neutral-900">{p.name}</div>
                 <div className={`font-mono text-2xl font-semibold ${p.tagColor.split(" ")[1]}`}>{p.tag}</div>
               </div>
               {/* share bar */}
@@ -111,7 +111,7 @@ export default function Manufacturing() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="font-serif text-2xl text-neutral-900 mb-8">From Monomer to Product</h3>
+          <h3 className="font-display text-2xl text-neutral-900 mb-8">From Monomer to Product</h3>
           <div className="grid md:grid-cols-4 gap-4">
             {steps.map((s, i) => (
               <motion.div

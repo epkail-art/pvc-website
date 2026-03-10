@@ -54,7 +54,7 @@ export default function Comparison() {
           <span className="w-5 h-px bg-teal-500 inline-block" />
           Analytical Context
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900 mb-3">
+        <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900 mb-3">
           PVC vs Other Plastics
         </h2>
         <p className="text-neutral-400 text-sm max-w-xl leading-relaxed">

@@ -48,7 +48,7 @@ export default function History() {
             <span className="w-5 h-px bg-teal-500" />
             Origins
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900">
+          <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900">
             A History of Accidental<br />Discovery
           </h2>
         </motion.div>
@@ -73,7 +73,7 @@ export default function History() {
               <div className="font-mono text-xs text-teal-600 tracking-wider font-medium mb-1">
                 {e.year}
               </div>
-              <div className="font-serif text-xl text-neutral-900 mb-2 leading-snug">
+              <div className="font-display text-2xl text-neutral-900 mb-2 leading-snug">
                 {e.title}
               </div>
               <p className="text-neutral-500 text-sm leading-relaxed max-w-2xl">

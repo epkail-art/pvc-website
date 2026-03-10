@@ -220,7 +220,7 @@ export default function Types() {
           <span className="w-5 h-px bg-teal-500 inline-block" />
           Stereochemistry
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900">
+        <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900">
           Tacticity
         </h2>
         <p className="text-neutral-400 mt-3 max-w-xl text-sm leading-relaxed">

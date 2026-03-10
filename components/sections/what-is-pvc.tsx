@@ -84,7 +84,7 @@ export default function WhatIsPVC() {
           <span className="w-5 h-px bg-teal-500 inline-block" />
           The Material
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900 mb-3">
+        <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900 mb-3">
           Why PVC Matters
         </h2>
         <p className="text-neutral-400 text-sm max-w-xl leading-relaxed">
@@ -121,36 +121,82 @@ export default function WhatIsPVC() {
           <div className="font-mono text-2xl text-teal-600 text-center py-4 border-y border-neutral-100 mb-6">
             –[CH₂–CHCl]<sub>n</sub>–
           </div>
-          <svg viewBox="0 0 440 110" className="w-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="wglow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#0d9488" stopOpacity="0.07"/>
-                <stop offset="100%" stopColor="#0d9488" stopOpacity="0"/>
-              </radialGradient>
-            </defs>
-            <ellipse cx="220" cy="55" rx="210" ry="48" fill="url(#wglow)"/>
-            <polyline points="20,70 80,38 140,70 200,38 260,70 320,38 380,70 420,55"
-              fill="none" stroke="#0d9488" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"/>
-            {/* Cl pendants */}
-            {[80,200,320].map(x => (
-              <g key={x}>
-                <line x1={x} y1="38" x2={x} y2="10" stroke="#0d9488" strokeWidth="2"/>
-                <circle cx={x} cy="8" r="8" fill="#f0fdfa" stroke="#0d9488" strokeWidth="1.5"/>
-                <text x={x} y="11.5" textAnchor="middle" fill="#0d9488" fontSize="7" fontWeight="700" fontFamily="monospace">Cl</text>
+          {/* 
+            Proper sp3 zigzag backbone: 6 carbons, Cl + H pendants on each CHCl,
+            H+H pendants on each CH2. Viewbox expanded to fit H atoms above/below.
+          */}
+          <svg viewBox="-8 -5 456 175" className="w-full" xmlns="http://www.w3.org/2000/svg">
+            {/* ── Backbone bonds ── */}
+            <line x1="48" y1="78" x2="108" y2="50" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="108" y1="50" x2="168" y2="78" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="168" y1="78" x2="228" y2="50" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="228" y1="50" x2="288" y2="78" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="288" y1="78" x2="348" y2="50" stroke="#cbd5e1" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="348" y1="50" x2="400" y2="68" stroke="#cbd5e1" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 3" opacity="0.5"/>
+
+            {/* ── C1 (CH2) at (48,78) — 2×H pendants ── */}
+            <line x1="48" y1="78" x2="26" y2="56" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="22" cy="52" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="22" y="55.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+            <line x1="48" y1="78" x2="26" y2="100" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="22" cy="104" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="22" y="107.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── C2 (CHCl) at (108,50) — Cl above, H below ── */}
+            <line x1="108" y1="50" x2="108" y2="18" stroke="#5eead4" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="108" cy="12" r="11" fill="#f0fdfa" stroke="#0d9488" strokeWidth="2"/>
+            <text x="108" y="15.5" textAnchor="middle" fontSize="8" fontWeight="700" fontFamily="monospace" fill="#0d9488">Cl</text>
+            <line x1="108" y1="50" x2="108" y2="82" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="108" cy="88" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="108" y="91.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── C3 (CH2) at (168,78) — 2×H pendants ── */}
+            <line x1="168" y1="78" x2="168" y2="52" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="168" cy="46" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="168" y="49.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+            <line x1="168" y1="78" x2="168" y2="104" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="168" cy="110" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="168" y="113.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── C4 (CHCl) at (228,50) — Cl above, H below ── */}
+            <line x1="228" y1="50" x2="228" y2="18" stroke="#5eead4" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="228" cy="12" r="11" fill="#f0fdfa" stroke="#0d9488" strokeWidth="2"/>
+            <text x="228" y="15.5" textAnchor="middle" fontSize="8" fontWeight="700" fontFamily="monospace" fill="#0d9488">Cl</text>
+            <line x1="228" y1="50" x2="228" y2="82" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="228" cy="88" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="228" y="91.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── C5 (CH2) at (288,78) — 2×H pendants ── */}
+            <line x1="288" y1="78" x2="288" y2="52" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="288" cy="46" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="288" y="49.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+            <line x1="288" y1="78" x2="288" y2="104" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="288" cy="110" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="288" y="113.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── C6 (CHCl) at (348,50) — Cl above, H below ── */}
+            <line x1="348" y1="50" x2="348" y2="18" stroke="#5eead4" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="348" cy="12" r="11" fill="#f0fdfa" stroke="#0d9488" strokeWidth="2"/>
+            <text x="348" y="15.5" textAnchor="middle" fontSize="8" fontWeight="700" fontFamily="monospace" fill="#0d9488">Cl</text>
+            <line x1="348" y1="50" x2="348" y2="82" stroke="#e2e8f0" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="348" cy="88" r="9" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="348" y="91.5" textAnchor="middle" fontSize="7" fontWeight="600" fontFamily="monospace" fill="#94a3b8">H</text>
+
+            {/* ── Carbon atoms (on top) ── */}
+            {[{x:48,y:78},{x:108,y:50},{x:168,y:78},{x:228,y:50},{x:288,y:78},{x:348,y:50}].map(({x,y},i) => (
+              <g key={i}>
+                <circle cx={x} cy={y} r="14" fill="white" stroke="#94a3b8" strokeWidth="2"/>
+                <text x={x} y={y+4.5} textAnchor="middle" fontSize="9" fontWeight="700" fontFamily="monospace" fill="#475569">C</text>
               </g>
             ))}
-            {/* C atoms */}
-            {[80,140,200,260,320,380].map((x,i) => (
-              <g key={x}>
-                <circle cx={x} cy={i%2===0?38:70} r="13" fill="#f8fafc" stroke="#94a3b8" strokeWidth="1.5"/>
-                <text x={x} y={i%2===0?42:74} textAnchor="middle" fill="#475569" fontSize="8" fontWeight="600" fontFamily="monospace">C</text>
-              </g>
-            ))}
-            {/* legend */}
-            <circle cx="20" cy="100" r="4" fill="#f0fdfa" stroke="#0d9488" strokeWidth="1.2"/>
-            <text x="30" y="103" fill="#94a3b8" fontSize="7" fontFamily="monospace">Chlorine (Cl) — pendant group</text>
-            <circle cx="220" cy="100" r="4" fill="#f8fafc" stroke="#94a3b8" strokeWidth="1.2"/>
-            <text x="230" y="103" fill="#94a3b8" fontSize="7" fontFamily="monospace">Carbon (C) — backbone</text>
+
+            {/* ── Legend ── */}
+            <circle cx="16" cy="148" r="6" fill="#f0fdfa" stroke="#0d9488" strokeWidth="1.5"/>
+            <text x="28" y="151.5" fill="#94a3b8" fontSize="7.5" fontFamily="monospace">Cl — pendant</text>
+            <circle cx="120" cy="148" r="6" fill="white" stroke="#94a3b8" strokeWidth="1.5"/>
+            <text x="132" y="151.5" fill="#94a3b8" fontSize="7.5" fontFamily="monospace">C — backbone</text>
+            <circle cx="224" cy="148" r="6" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="1.5"/>
+            <text x="236" y="151.5" fill="#94a3b8" fontSize="7.5" fontFamily="monospace">H — hydrogen</text>
           </svg>
         </motion.div>
 

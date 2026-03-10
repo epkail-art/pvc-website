@@ -88,7 +88,7 @@ export default function Applications() {
             <span className="w-5 h-px bg-teal-500 inline-block" />
             Industrial Use
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-[1.05] text-neutral-900 mb-3">
+          <h2 className="font-display text-5xl md:text-6xl leading-none text-neutral-900 mb-3">
             Applications of PVC
           </h2>
           <p className="text-neutral-400 text-sm max-w-xl leading-relaxed">
@@ -123,7 +123,7 @@ export default function Applications() {
                   </div>
                 </div>
 
-                <div className="font-serif text-xl text-neutral-900 mb-3">{a.title}</div>
+                <div className="font-display text-2xl text-neutral-900 mb-3">{a.title}</div>
 
                 {/* Bullet points — visual, scannable */}
                 <ul className="space-y-1.5 mb-4">

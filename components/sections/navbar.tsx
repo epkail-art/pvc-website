@@ -5,6 +5,7 @@ const links = [
   { href: "#what",          label: "What is PVC" },
   { href: "#history",       label: "History" },
   { href: "#structure",     label: "Structure" },
+  { href: "#polymerization", label: "Polymerisation" },
   { href: "#types",         label: "Tacticity" },
   { href: "#manufacturing", label: "Manufacturing" },
   { href: "#applications",  label: "Applications" },
@@ -29,7 +30,7 @@ export default function Navbar() {
           : "bg-white/60 backdrop-blur-sm"
       }`}
     >
-      <a href="#" className="font-serif text-base text-neutral-900 hover:text-teal-600 transition-colors flex-shrink-0">
+      <a href="#" className="font-display text-xl text-neutral-900 hover:text-teal-600 transition-colors flex-shrink-0">
         PVC Study
       </a>
 
