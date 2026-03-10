@@ -51,7 +51,7 @@ export default function HeroSection() {
         {/* ── what's inside the tilted card ── */}
         <div className="relative w-full h-full rounded-xl overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=1600&q=80"
+            src="https://images.unsplash.com/photo-1628595351029-c2bf17511435?w=1600&q=80"
             alt="PVC pipes"
             fill
             className="object-cover object-center"
