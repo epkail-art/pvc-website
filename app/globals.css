@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+/*
+  Typography:
+  - Danson Bold → closest available: Bebas Neue (free, condensed, impactful) for big display headings
+  - Subheadings / serif accents: DM Serif Display (elegant complement to Bebas Neue)
+  - Body: DM Sans (clean, modern, pairs perfectly with DM Serif)
+  - Mono: JetBrains Mono (formulas, data)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --teal: #0d9488;
-}
+:root { --teal: #0d9488; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Instrument Sans', system-ui, sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   color: #0c0c0b;
   overflow-x: hidden;
-  /* Subtle dot-grid background — engineering paper feel */
-  background-color: #f9f9f7;
+  background-color: #f7f7f5;
   background-image:
-    radial-gradient(circle at 20% 10%, rgba(13,148,136,0.06) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(13,148,136,0.04) 0%, transparent 50%),
-    radial-gradient(#d1d5db 1px, transparent 1px);
-  background-size: auto, auto, 28px 28px;
+    radial-gradient(ellipse 70% 60% at 8% 12%,  rgba(13,148,136,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 95% 5%,  rgba(2,132,199,0.05)  0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(13,148,136,0.05) 0%, transparent 70%),
+    radial-gradient(#d4d4d0 1px, transparent 1px);
+  background-size: auto, auto, auto, 30px 30px;
 }
 
-/* Alternate dark-bg sections get a clean slate */
+/* Dark sections */
 .section-dark {
   background: #0f172a;
-  background-image: 
-    radial-gradient(circle at 30% 50%, rgba(13,148,136,0.12) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(13,148,136,0.06) 0%, transparent 50%);
+  background-image:
+    radial-gradient(ellipse 50% 60% at 30% 50%, rgba(13,148,136,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(13,148,136,0.06) 0%, transparent 50%);
 }
 
 /* Custom scrollbar */
@@ -37,3 +42,15 @@ body {
 ::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 10px; }
 
 .formula { font-family: 'JetBrains Mono', monospace; }
+
+/* Bebas Neue — big impactful display headings (h1, h2) */
+.font-display {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  letter-spacing: 0.03em;
+}
+
+/* DM Serif Display — elegant subheadings, card titles, serif accents */
+.font-serif {
+  font-family: 'DM Serif Display', Georgia, serif;
+  letter-spacing: -0.01em;
+}
