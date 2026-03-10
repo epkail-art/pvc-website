@@ -1,5 +1,5 @@
 import Navbar from "@/components/sections/navbar"
-import Hero from "@/components/sections/hero"
+import HeroSection from "@/components/sections/hero"
 import WhatIsPVC from "@/components/sections/what-is-pvc"
 import History from "@/components/sections/history"
 import Types from "@/components/sections/types"
@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <main>
       <Navbar />
-      <Hero />
+      <HeroSection />
       <WhatIsPVC />
       <History />
       <Types />
