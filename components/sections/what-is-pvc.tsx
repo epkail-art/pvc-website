@@ -1,9 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import DisplayCards from "@/components/ui/display-cards";
 import { cn } from "@/lib/utils";
-import { Zap, Shield, Recycle, DollarSign, Thermometer, FlaskConical } from "lucide-react";
+import { Zap, Shield, Recycle, DollarSign, Thermometer } from "lucide-react";
 
 // ── GlowingEffect bento grid data ────────────────────────────────────────────
 const properties: Array<{area: string; icon: React.ReactNode; title: string; description: string}> = [
@@ -39,40 +38,9 @@ const properties: Array<{area: string; icon: React.ReactNode; title: string; des
   },
 ];
 
-// ── DisplayCards stacked cards — PVC key facts ───────────────────────────────
-const keyFactCards = [
-  {
-    icon: <FlaskConical className="w-4 h-4" />,
-    title: "C–Cl Dipole: 1.44 D",
-    description: "The chlorine atom's electronegativity pulls electron density from carbon, creating a permanent dipole that raises Tg to ~80°C — 210°C higher than polyethylene.",
-    date: "Bond chemistry",
-    iconClassName: "text-teal-600",
-    titleClassName: "text-teal-700",
-    className: "[grid-area:stack] hover:-translate-y-10 before:absolute before:w-full before:outline-1 before:rounded-2xl before:outline-border before:h-full before:content-[''] before:bg-blend-overlay before:bg-white/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <Zap className="w-4 h-4" />,
-    title: "57% Chlorine by Mass",
-    description: "More than half of PVC's mass is chlorine sourced from common salt (NaCl) by electrolysis. This makes PVC less dependent on crude oil than most plastics.",
-    date: "Composition",
-    iconClassName: "text-amber-600",
-    titleClassName: "text-amber-700",
-    className: "[grid-area:stack] translate-x-12 translate-y-10 hover:-translate-y-1 before:absolute before:w-full before:outline-1 before:rounded-2xl before:outline-border before:h-full before:content-[''] before:bg-blend-overlay before:bg-white/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
-  },
-  {
-    icon: <Shield className="w-4 h-4" />,
-    title: "Service Life: 40–100 yrs",
-    description: "In-service PVC water mains installed in the 1950s are still operating today with zero corrosion. Long-term mechanical testing shows no degradation trend.",
-    date: "Durability",
-    iconClassName: "text-purple-600",
-    titleClassName: "text-purple-700",
-    className: "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10",
-  },
-];
-
 // ── GridItem component for GlowingEffect bento ───────────────────────────────
 function GridItem({ area, icon, title, description }: {
-  area: string; icon: React.ReactNode; title: string; description: string;
+  area: string; icon: React.ReactNode; title: string; description: string; key?: string;
 }) {
   return (
     <li className={cn("min-h-[14rem] list-none", area)}>
@@ -121,37 +89,10 @@ export default function WhatIsPVC() {
         className="mb-24"
       >
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
-          {properties.map((p) => <GridItem key={p.title} {...p} />)}
+          {properties.map((p) => <GridItem key={p.title} area={p.area} icon={p.icon} title={p.title} description={p.description} />)}
         </ul>
       </motion.div>
 
-      {/* DisplayCards stacked — key facts, adds interactivity */}
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-24">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }} viewport={{ once: true }}
-        >
-          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-teal-600 flex items-center gap-2 mb-4">
-            <span className="w-5 h-px bg-teal-500 inline-block" />Key Facts
-          </p>
-          <h3 className="font-display text-4xl leading-none text-neutral-900 mb-3">
-            Three Numbers<br/>That Define PVC
-          </h3>
-          <p className="font-sans text-neutral-400 text-sm leading-relaxed max-w-sm">
-            Hover the stacked cards to reveal each fact. These three properties explain why PVC outperforms competing materials in cost, safety, and longevity.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}
-          className="flex justify-center"
-        >
-          <div className="relative w-full max-w-md h-[280px] flex items-start">
-            <DisplayCards cards={keyFactCards} />
-          </div>
-        </motion.div>
-      </div>
 
       {/* Molecular structure SVG + bond data */}
       <div className="grid md:grid-cols-2 gap-8 items-center">

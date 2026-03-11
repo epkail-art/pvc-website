@@ -1,17 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const links = [
-  { href: "#what",          label: "What is PVC" },
-  { href: "#history",       label: "History" },
-  { href: "#structure",     label: "Structure" },
-  { href: "#polymerization", label: "Polymerisation" },
-  { href: "#types",         label: "Tacticity" },
-  { href: "#manufacturing", label: "Manufacturing" },
-  { href: "#applications",  label: "Applications" },
-  { href: "#comparison",    label: "vs Other Plastics" },
-  { href: "#environment",   label: "Environment" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,18 +23,6 @@ export default function Navbar() {
         PVC Study
       </a>
 
-      <ul className="hidden md:flex gap-0.5 list-none overflow-x-auto">
-        {links.map((l) => (
-          <li key={l.href}>
-            <a
-              href={l.href}
-              className="text-[0.75rem] font-medium text-neutral-500 hover:text-neutral-900 hover:bg-neutral-100 px-2.5 py-1.5 rounded-lg transition-all whitespace-nowrap"
-            >
-              {l.label}
-            </a>
-          </li>
-        ))}
-      </ul>
     </nav>
   );
 }
