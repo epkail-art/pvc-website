@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 export interface DisplayCardProps {
   className?: string;
+  key?: number;
   icon?: React.ReactNode;
   title?: string;
   description?: string;
@@ -80,7 +81,7 @@ export default function DisplayCards({ cards = [] }: DisplayCardsProps) {
   return (
     <div
       className="grid [grid-template-areas:'stack'] place-items-center w-full cursor-pointer"
-      onClick={() => setFanned((f: boolean) => !f)}
+      onClick={() => setFanned((prev: boolean) => !prev)}
       title={fanned ? "Click to stack" : "Click to fan out"}
     >
       {/* Click hint */}
