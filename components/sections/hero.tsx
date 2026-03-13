@@ -19,9 +19,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-neutral-500 text-base md:text-lg max-w-xl mx-auto font-light leading-relaxed">
-              A complete study — from molecular chain architecture and
-              polymerisation mechanisms to industrial manufacturing and
-              sustainability.
+              AKHILESH REDDY(CH22BTECH11027)
             </p>
 
             <div className="flex gap-3 justify-center pt-2 flex-wrap">
